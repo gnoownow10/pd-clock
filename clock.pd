@@ -1,6 +1,6 @@
-#N canvas 164 100 918 581 10;
+#N canvas 366 119 918 581 10;
 #X declare -lib zexy;
-#X obj 132 178 effects/delay \$0.delay1;
+#X obj 132 208 effects/delay \$0.delay1;
 #N canvas 664 204 450 505 \$0.synth 0;
 #X obj 101 55 inlet;
 #X obj 274 35 synth/main \$0.synth;
@@ -46,16 +46,16 @@
 #X connect 15 0 16 0;
 #X connect 16 0 17 0;
 #X connect 17 0 9 0;
-#X restore 97 151 pd \$0.synth;
-#X obj 131 256 effects/freeverb \$0.freeverb;
-#X obj 153 284 effects/freeverb \$0.freeverb;
-#X obj 97 230 effects/freeverb \$0.freeverb;
-#X obj 96 320 +~;
-#X obj 96 499 dac~;
-#X obj 22 460 *~;
-#X obj 145 459 *~;
+#X restore 97 181 pd \$0.synth;
+#X obj 131 286 effects/freeverb \$0.freeverb;
+#X obj 153 314 effects/freeverb \$0.freeverb;
+#X obj 97 260 effects/freeverb \$0.freeverb;
+#X obj 96 350 +~;
+#X obj 96 529 dac~;
+#X obj 22 490 *~;
+#X obj 145 489 *~;
 #X obj 19 9 declare -lib zexy;
-#X floatatom 163 363 5 0 100 0 - - -, f 5;
+#X floatatom 163 393 5 0 100 0 - - -, f 5;
 #X obj 548 239 parts/clock \$0.clock;
 #X obj 548 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -149,7 +149,7 @@
 #X connect 39 0 28 1;
 #X connect 40 0 6 1;
 #X connect 41 0 40 0;
-#X restore 97 73 pd \$0.sec-arm;
+#X restore 97 103 pd \$0.sec-arm;
 #X obj 707 201 r \$0.clock.on-new-grid;
 #X obj 741 268 +;
 #X obj 741 289 mod 12;
@@ -244,7 +244,7 @@
 #X connect 9 0 10 0;
 #X connect 10 0 6 0;
 #X connect 11 0 10 1;
-#X restore 112 96 pd \$0.min-arm;
+#X restore 112 126 pd \$0.min-arm;
 #X obj 709 430 r \$0.clock.on-new-grid;
 #X obj 709 452 random 4;
 #X obj 709 474 - 2;
@@ -273,8 +273,8 @@
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
 #X connect 11 0 8 1;
-#X restore 131 118 pd \$0.hour-arm;
-#N canvas 247 343 250 387 \$0.wday-teller 0;
+#X restore 131 148 pd \$0.hour-arm;
+#N canvas 250 343 250 387 \$0.wday-teller 0;
 #X obj 26 12 r \$0.clock.on-new-grid;
 #X obj 54 34 r \$0.clock.min;
 #X obj 93 80 r \$0.clock.wday;
@@ -292,6 +292,8 @@
 #X obj 79 280 + 1;
 #X obj 26 330 outlet;
 #X obj 56 58 r \$0.clock.hour;
+#X obj 128 122 inlet;
+#X obj 128 144 b;
 #X connect 0 0 9 0;
 #X connect 1 0 9 1;
 #X connect 2 0 5 0;
@@ -310,8 +312,10 @@
 #X connect 13 0 14 0;
 #X connect 14 0 12 1;
 #X connect 16 0 4 0;
-#X restore 20 36 pd \$0.wday-teller;
-#X obj 20 61 wday/main;
+#X connect 17 0 18 0;
+#X connect 18 0 10 0;
+#X restore 20 66 pd \$0.wday-teller;
+#X obj 20 91 wday/main;
 #X obj 548 266 r \$0.clock.sec;
 #X obj 548 314 -;
 #X obj 566 288 r \$0.clock.min;
@@ -322,14 +326,14 @@
 #X obj 580 404 + 60;
 #X obj 548 445 / 30;
 #X obj 548 489 pack f 1000;
-#X obj 21 389 +~;
-#X obj 80 388 +~;
-#X obj 21 417 effects/pan \$0.pan;
+#X obj 21 419 +~;
+#X obj 80 418 +~;
+#X obj 21 447 effects/pan \$0.pan;
 #X obj 362 153 / 120;
 #X obj 362 176 + 0.125;
 #X obj 362 130 r \$0.clock.sec;
 #X obj 362 198 s \$0.pan.d;
-#X obj 163 405 pack f 1000;
+#X obj 163 435 pack f 1000;
 #X obj 548 533 s \$0.pan.hip;
 #X obj 545 14 r \$0.clock.min;
 #X obj 545 36 / 60;
@@ -342,12 +346,12 @@
 #X obj 364 103 s \$0.delay2.offset;
 #X obj 545 124 + 300;
 #X obj 364 81 + 300;
-#X obj 163 382 dbtorms;
-#X obj 163 427 line;
-#X obj 152 204 effects/delay \$0.delay2;
+#X obj 163 412 dbtorms;
+#X obj 163 457 line;
+#X obj 152 234 effects/delay \$0.delay2;
 #X obj 364 15 r \$0.clock.hour;
 #X obj 548 176 r \$0.start-clock;
-#X obj 163 341 r \$0.vol;
+#X obj 163 371 r \$0.vol;
 #X obj 735 81 parts/load-config \$0;
 #X msg 735 59 ../config.txt;
 #X obj 581 36 r \$0.clock.hour;
@@ -360,6 +364,8 @@ bang \; \$1.clock.on-new-grid bang \; pd dsp 1 \; \$1.start-clock bang
 ;
 #X obj 548 511 line;
 #X obj 548 467 * 1970;
+#X obj 20 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 0 4 0;
@@ -436,3 +442,4 @@ bang \; \$1.clock.on-new-grid bang \; pd dsp 1 \; \$1.start-clock bang
 #X connect 75 0 12 0;
 #X connect 77 0 51 0;
 #X connect 78 0 42 0;
+#X connect 79 0 31 0;
