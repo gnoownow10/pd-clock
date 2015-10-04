@@ -1,0 +1,10 @@
+#N canvas 66 298 225 191 10;
+#X obj 35 89 freeverb~;
+#X obj 35 28 inlet~;
+#X obj 35 137 outlet~;
+#X obj 90 29 r \$1.settings;
+#X connect 0 0 2 0;
+#X connect 0 1 2 0;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 3 0 0 0;

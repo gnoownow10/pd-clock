@@ -1,0 +1,19 @@
+%d.synth.fm-ratio     10;
+%d.synth.fm-attack    10;
+%d.synth.fm-amplitude 700;
+%d.synth.waveshape-gain 884;
+%d.synth.attack  50;
+%d.synth.release 1500;
+
+%d.freeverb.settings roomsize 0.8;
+%d.freeverb.settings damping  0.5;
+%d.freeverb.settings width    1;
+%d.freeverb.settings wet      0.1;
+%d.freeverb.settings dry      0.1;
+%d.freeverb.settings freeze   0;
+%d.freeverb.settings bypass   0;
+
+%d.delay1.feedback 0.4;
+%d.delay2.feedback 0.4;
+
+%d.vol 90;
