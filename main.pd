@@ -1,19 +1,18 @@
-#N canvas 582 329 296 255 10;
+#N canvas 476 260 296 228 10;
 #X declare -lib zexy;
 #X msg 55 88 ../config.txt;
 #X obj 23 41 loadbang;
 #X obj 23 63 t b b;
 #X obj 55 110 helpers/load-config the-clock;
-#X obj 23 221 clock the-clock;
+#X obj 23 198 clock the-clock;
 #X obj 23 16 declare -lib zexy;
 #X floatatom 186 17 2 0 0 0 - the-clock.clock.hour -, f 2;
 #X floatatom 214 17 2 0 0 0 - the-clock.clock.min -, f 2;
 #X floatatom 244 17 2 0 0 0 - the-clock.clock.sec -, f 2;
 #X text 203 16 :;
 #X text 233 16 :;
-#X msg 23 134 \; the-clock.clock.on-new-date bang \; the-clock.clock.on-new-min
-bang \; the-clock.clock.on-new-grid bang \; pd dsp 1 \; the-clock.start-clock
-bang;
+#X msg 23 134 \; the-clock.init bang \; pd dsp 1 \; the-clock.start-clock
+1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 11 0;
