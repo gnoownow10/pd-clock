@@ -1,19 +1,19 @@
-%s.synth.fm-ratio     10;
-%s.synth.fm-attack    10;
-%s.synth.fm-amplitude 700;
-%s.synth.waveshape-gain 884;
-%s.synth.attack  50;
-%s.synth.release 1500;
+synth.fm-ratio     10;
+synth.fm-attack    10;
+synth.fm-amplitude 700;
+synth.waveshape-gain 884;
+synth.attack  50;
+synth.release 1500;
 
-%s.freeverb.settings roomsize 0.8;
-%s.freeverb.settings damping  0.5;
-%s.freeverb.settings width    1;
-%s.freeverb.settings wet      0.1;
-%s.freeverb.settings dry      0.1;
-%s.freeverb.settings freeze   0;
-%s.freeverb.settings bypass   0;
+freeverb.settings roomsize 0.8;
+freeverb.settings damping  0.5;
+freeverb.settings width    1;
+freeverb.settings wet      0.1;
+freeverb.settings dry      0.1;
+freeverb.settings freeze   0;
+freeverb.settings bypass   0;
 
-%s.delay1.feedback 0.4;
-%s.delay2.feedback 0.4;
+delay1.feedback 0.4;
+delay2.feedback 0.4;
 
-%s.vol 90;
+vol 90;
