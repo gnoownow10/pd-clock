@@ -17,3 +17,4 @@ delay1.feedback 0.4;
 delay2.feedback 0.4;
 
 vol 90;
+listen 0;

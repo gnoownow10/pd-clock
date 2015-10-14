@@ -1,4 +1,4 @@
-#N canvas 342 144 740 581 10;
+#N canvas 390 88 740 581 10;
 #X obj 142 248 effects/delay \$1.delay1;
 #N canvas 89 219 450 505 \$1.synth 0;
 #X obj 101 55 inlet;
@@ -357,6 +357,12 @@
 #X obj 589 201 r \$1.init;
 #X obj 173 477 line~;
 #X obj 178 83 inlet;
+#X obj 273 466 r \$1.listen;
+#X obj 273 510 netreceive;
+#X msg 273 488 listen \$1;
+#X obj 273 532 helpers/send-prefix \$1.;
+#X obj 546 511 r \$1.quit;
+#X msg 546 533 \; pd quit;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 0 4 0;
@@ -432,3 +438,7 @@
 #X connect 74 0 7 1;
 #X connect 74 0 8 1;
 #X connect 75 0 10 0;
+#X connect 76 0 78 0;
+#X connect 77 0 79 0;
+#X connect 78 0 77 0;
+#X connect 80 0 81 0;
