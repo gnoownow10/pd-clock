@@ -12,6 +12,8 @@ Sound clock inspired by minimalistic music.
 
     $ ./clock.sh
 
+Or you can open `main.pd` with Pure Data's GUI.
+
 # How to Listen
 
 At first, you will hear 4 notes chord pulsing every second. Each chord is repeated 12 times. So it serves as clock's dial numbers.
